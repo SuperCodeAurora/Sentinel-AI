@@ -17,9 +17,10 @@ DiamondShield is an open-source, privacy-first **Web Application Firewall (WAF)*
 ### Prerequisites
 1. Install [Ollama](https://ollama.com).
 2. Pull the brain: `ollama run llama3`
-
+(Docker available)
 ### Installation
 ```bash
 git clone [https://github.com/SuperCodeAurora/DiamondShield-Sentinel-AI.git](https://github.com/SuperCodeAurora/DiamondShield-Sentinel-AI.git)
 cd DiamondShield-Sentinel-AI
 pip install -r requirements.txt
+
