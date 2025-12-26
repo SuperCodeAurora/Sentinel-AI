@@ -2,25 +2,27 @@
 
 > **"Your AI Bodyguard against the Dark Forest of the Internet."**
 
-DiamondShield is an open-source, privacy-first **Web Application Firewall (WAF)** that runs entirely on your local server. It acts as a middleware between your web application and digital threats, analyzing **incoming HTTP traffic** and **payloads** for SQL Injection, XSS, and complex AI-generated attacks.
+DiamondShield is an open-source, privacy-first **Web Application Firewall (WAF)** that runs entirely on your local server. It acts as a middleware between your web application and digital threats, specifically designed to block **Bot Swarms**, **SQL Injection**, and **AI Prompt Injection**.
 
-**Status:** 🟢 Active Prototype
+**Status:** 🟢 Active Prototype (Dockerized)
 
-## ⚡ Why DiamondShield?
+## ⚡ Key Features
 
-- **100% Privacy:** No traffic logs leave your server. Powered by [Ollama](https://ollama.com).
-- **AI-Powered Defense:** Detects semantic attacks (like Prompt Injection) that traditional firewalls miss.
-- **Zero Latency:** Uses optimized local models (Llama3/Mistral) for rapid threat analysis.
+- **🧠 AI-Powered Defense:** Uses a local LLM (Ollama) to detect semantic attacks that Regex misses.
+- **🤖 Anti-Bot Barrier:** JavaScript-based challenges to stop automated scanners (curl, Python bots) instantly.
+- **🛡️ Privacy First:** No traffic logs leave your server. 100% Local.
+- **🐳 Docker Ready:** Deploy safely in an isolated container.
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Recommended: Docker)
+
+The easiest way to run DiamondShield is using Docker. This ensures the AI and the Server run in perfect isolation.
 
 ### Prerequisites
-1. Install [Ollama](https://ollama.com).
-2. Pull the brain: `ollama run llama3`
-(Docker available)
-### Installation
-```bash
-git clone [https://github.com/SuperCodeAurora/DiamondShield-Sentinel-AI.git](https://github.com/SuperCodeAurora/DiamondShield-Sentinel-AI.git)
-cd DiamondShield-Sentinel-AI
-pip install -r requirements.txt
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed.
 
+### Installation & Usage
+
+1. **Clone the Repository**
+   ```bash
+   git clone [https://github.com/SuperCodeAurora/DiamondShield-Sentinel-AI.git](https://github.com/SuperCodeAurora/DiamondShield-Sentinel-AI.git)
+   cd DiamondShield-Sentinel-AI
