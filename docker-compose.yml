@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # Service 1: The AI Brain
+  ollama-brain:
+    image: ollama/ollama:latest
+    container_name: diamond_brain
+    volumes:
+      - ollama_storage:/root/.ollama  # Save the models permanently
+    ports:
+      - "11434:11434"
+    # Note: If you have an NVIDIA GPU, uncomment the deploy section below for speed.
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # Service 2: The Firewall (Your Code)
+  diamond-shield:
+    build: .
+    container_name: diamond_shield
+    ports:
+      - "5000:5000"
+    environment:
+      - OLLAMA_HOST=http://ollama-brain:11434  # Tell Python where the Brain is
+    depends_on:
+      - ollama-brain
+    volumes:
+      - ./logs:/app/logs  # Save the threat logs to your host computer
+
+volumes:
+  ollama_storage:
